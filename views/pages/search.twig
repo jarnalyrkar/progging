@@ -1,0 +1,27 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <section class="section__news-search-results">
+    {% for post in posts %}
+    <div class="news-item__container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <div class="image">
+            {% if post.thumbnail.src %}
+            <img src="{{post.thumbnail.src | resize(150, 150) }}" />
+            {% endif %}
+          </div> {# /.image #}
+        </div> {# /.col #}
+
+        <div class="col-xs-12 col-sm-12 col-md-8">
+          <div class="copy">
+            <p><small>{{ post.date }}</small></p>
+            <p><strong>{{post.title}}</strong></p>
+            <p>{{post.preview.length(25)}}</p>
+          </div> {# /.copy #}
+        </div> {# /.col #}
+      </div> {# /.row #}
+    </div> {# /.news-item__container #}
+    {% endfor %}
+  </section>
+{% endblock %}

@@ -1,0 +1,84 @@
+.hamburger {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  position: relative;
+  align-self: baseline;
+
+  &--toggled {
+    z-index: 1;
+    & .hamburger__line {
+      border-color: white;
+    }
+  }
+
+  &__line {
+    display: block;
+    border: 1px solid black;
+    width: 30px;
+    margin-bottom: 0.5em;
+    &:nth-child(3) {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.headerMenu {
+  background-color: #631DC5;
+  position: absolute;
+  top: 0; right: 0;
+  height: 100vh;
+  width: 0;
+  transition: width 200ms ease-in-out;
+  z-index: 1;
+
+  & .nav-main {
+    padding: 2rem;
+    list-style: none;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  &--open {
+    width: 100vw;
+    transition: width 200ms ease-in-out;
+    & .nav-main {
+      display: block;
+    }
+  }
+
+  & .nav-main-link {
+    color: white;
+    font-family: Geneva, sans-serif;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width:992px) {
+  .hamburger {
+    display: none;
+  }
+  .headerMenu {
+    display: block;
+    position: static;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    & .nav-main {
+      padding: 0;
+      display: flex;
+      &-link {
+        color: black;
+      }
+    }
+    & .search {
+      margin-left: 1rem;
+      & input[type="text"] {
+        border: 0;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}

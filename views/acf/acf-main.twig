@@ -1,0 +1,4 @@
+{# Gitt at du har et flexible content field ved fieldname 'main' #}
+{% for fields in post.meta('main') %}
+  {% include 'views/acf/main/acf-' ~ fields.acf_fc_layout ~ '.twig' %}
+{% endfor %}

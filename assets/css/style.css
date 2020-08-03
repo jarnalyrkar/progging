@@ -1,0 +1,22 @@
+/*
+ * Theme Name: wp-boilerplate-bootstrap
+ * Author: Joachim, Espen & Arve // R8 Edge
+ */
+
+/* Bootstrap Reset and Bootstrap grid */
+@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.css";
+
+/* SASS and global'ish stuff */
+/* Variables for frequently reused stuff like colors, fonts, etc */
+@import "base/variables.scss";
+
+/* Baseline (common typographic elements */
+@import "base/baseline.scss";
+
+/* Responsive oembeds. Comment to reset embed behavior to fixed-width */
+@import "base/responsive-embed.scss";
+
+/* Modules */
+@import "modules/primary-nav.scss";
+@import "modules/header.scss";

@@ -1,0 +1,19 @@
+/* Make embeds responsive by default. Uncomment in ../style.css if not required */
+
+.responsive-embed {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+}
+
+.responsive-embed iframe,
+.responsive-embed object,
+.responsive-embed embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
