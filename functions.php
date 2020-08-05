@@ -20,3 +20,4 @@ require_once($base_dir . '/inc/add_twig_nav.php');
 require_once($base_dir . '/inc/add_breadcrumb.php');
 // Add woocommerce-support
 // require_once($base_dir . '/inc/add_woocommerce_support.php');
+require_once($base_dir . '/inc/wordpress_options.php');

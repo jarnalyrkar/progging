@@ -1,6 +1,9 @@
 {# Example markup #}
 <nav class="headerMenu">
   <ul class="nav-main">
+    <li>
+      {% include "partials/searchform.twig" %}
+    </li>
     {# mainNav er globalt satt i inc/add_twig_nav.php #}
     {% for item in mainNav.items %}
     <li class="nav-main-item {{ item.classes|join(' ') }}">
@@ -25,8 +28,5 @@
       {% endif %}
     </li>
     {% endfor %}
-    <li>
-       {% include "partials/searchform.twig" %}
-    </li>
   </ul>
 </nav>

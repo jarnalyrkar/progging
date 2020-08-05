@@ -39,6 +39,11 @@
     list-style: none;
     margin-bottom: 0;
     display: none;
+    font-weight: 700;
+    & ul {
+      list-style: disc;
+      font-weight: 400;
+    }
   }
 
   &--open {
@@ -75,10 +80,10 @@
       }
     }
     & .search {
-      margin-left: 1rem;
       & input[type="text"] {
         border: 0;
         border-bottom: 1px solid #ccc;
+        margin-bottom: 2rem;
       }
     }
   }
