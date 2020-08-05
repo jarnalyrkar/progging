@@ -1,9 +1,26 @@
 {% if post.children %}
   {% for child in post.children %}
     {% if child.post_type == 'page' %}
-      <h3>
-        <a href="{{ child.link }}">{{ child.title }}</a>
-      </h3>
+      <a class="linkList" href="{{ child.link }}">
+        <div class="imageContainer">
+          <img src="{{ child.thumbnail.src }}">
+        </div>
+        <h3>{{ child.title }}</h3>
+      </a>
+      {% if child.children %}
+        <div class="linkList__children">
+        {% for subchild in child.children %}
+          {% if subchild.post_type == 'page' %}
+            <a class="linkList" href="{{ subchild.link }}">
+              <div class="imageContainer">
+                <img src="{{ subchild.thumbnail.src }}">
+              </div>
+              <h3>{{ subchild.title }}</h3>
+            </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endif %}
