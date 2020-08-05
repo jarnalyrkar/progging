@@ -9,7 +9,7 @@
   &--toggled {
     z-index: 1;
     & .hamburger__line {
-      border-color: white;
+      border-color: black;
     }
   }
 
@@ -26,7 +26,7 @@
 }
 
 .headerMenu {
-  background-color: #631DC5;
+  background-color: #fff;
   position: absolute;
   top: 0; right: 0;
   height: 100vh;
@@ -50,8 +50,9 @@
   }
 
   & .nav-main-link {
-    color: white;
+    color: black;
     font-family: Geneva, sans-serif;
+    user-select: none;
   }
 }
 

@@ -2,7 +2,7 @@ class MobileMenu {
 
   constructor() {
     this.hamburger = document.querySelector('#hamburger');
-    this.nav = document.querySelector('.headerMenu');
+    this.nav = document.querySelector('#mobiNav .headerMenu');
     this.events();
   }
 
