@@ -1,2 +1,2 @@
 exports.themeLocation = './';
-exports.urlToPreview = 'http://commerce.test';
+exports.urlToPreview = 'http://progging.test';

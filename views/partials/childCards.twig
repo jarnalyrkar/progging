@@ -1,0 +1,9 @@
+{% if post.children %}
+  {% for child in post.children %}
+    {% if child.post_type == 'page' %}
+      <h3>
+        <a href="{{ child.link }}">{{ child.title }}</a>
+      </h3>
+    {% endif %}
+  {% endfor %}
+{% endif %}

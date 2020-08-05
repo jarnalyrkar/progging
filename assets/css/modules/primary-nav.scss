@@ -52,7 +52,6 @@
   & .nav-main-link {
     color: white;
     font-family: Geneva, sans-serif;
-    text-transform: uppercase;
   }
 }
 
@@ -69,6 +68,7 @@
     & .nav-main {
       padding: 0;
       display: flex;
+      flex-direction: column;
       &-link {
         color: black;
       }

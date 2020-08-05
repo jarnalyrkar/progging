@@ -40,10 +40,6 @@ function add_my_scripts() {
 
   }
 
-  // $css = get_template_directory_uri() . '/style.css';
-  // $script = get_template_directory_uri() . '/assets/js/scripts-bundled.js';
-  // wp_enqueue_style('typekit', 'https://use.typekit.net/gsp0zqy.css', null, '1.0.0', false);
-  // wp_enqueue_style('typekit', 'https://use.typekit.net/pln3dhd.css', null, '1.0.0', false);
-  // wp_enqueue_style('main-styles', $css , null,  null, false);
-  // wp_enqueue_script('main-scripts', $script, array(), null, true);
+  wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css2?family=DM+Mono:ital@1&display=swap', null, '1.0.0', false);
+
 } add_action('wp_enqueue_scripts', 'add_my_scripts');

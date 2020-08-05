@@ -1,12 +1,19 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12 col-lg-8">
-      <h1>This is Index.twig</h1>
-      {{ post.title }}
+    <aside class="sidebar col-lg-4 d-none d-lg-block">
+      {% include 'partials/nav.twig' %}
+    </aside>
+    <div class="col-12 col-lg-5">
+      {% if not fn('is_front_page') %}
+        <h1>{{ post.title }}</h1>
+      {% endif %}
       {{ post.content }}
+      {% if not fn('is_front_page') %}
+        {% include 'partials/childCards.twig' %}
+      {% endif %}
     </div>
   </div>
 </div>
