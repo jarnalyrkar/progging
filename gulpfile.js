@@ -78,6 +78,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('waitForStyles', gulp.series('styles', function () {
+  clean;
   const src = gulp.src('**/*.css');
   if (isProduction) {
     browserSync.reload();
