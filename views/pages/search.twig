@@ -9,17 +9,15 @@
     <section class="searchResults col-12 col-lg-7 col-xl-5 offset-lg-1">
       <h1>{{ posts.found_posts }} innlegg funnet med &ldquo;{{ search_query }}&rdquo;</h1>
       {% for post in posts %}
-      <div class="searchResults__item">
+      <article class="searchResults__item">
         <header class="searchResults__title">
-          {% if post.thumbnail.src %}
           <div class="imageContainer">
-            <a href="{{ post.link }}"><img src="{{post.thumbnail.src }}" /></a>
+            <a href="{{ post.link }}"><img src="{{ (post.thumbnail.src ? post.thumbnail.src : 'https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=.' ) }}" /></a>
           </div>
-          {% endif %}
           <p><strong>{{post.title}}</strong></p>
         </header>
           <p>{{post.preview.chars(220).read_more('Les mer')}}</p>
-        </div>
+      </article>
       {% endfor %}
       <ol class="pagination">
         {% for page in posts.pagination.pages %}
