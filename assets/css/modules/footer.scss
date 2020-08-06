@@ -1,0 +1,10 @@
+.mainFooter {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: #347;
+  margin-top: 1rem;
+  color: white;
+  & > a {
+    color: white;
+  }
+}
