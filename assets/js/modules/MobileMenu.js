@@ -10,6 +10,7 @@ class MobileMenu {
     this.hamburger.addEventListener('click', (ev) => {
       this.nav.classList.toggle('headerMenu--open');
       this.hamburger.classList.toggle('hamburger--toggled');
+      document.body.classList.toggle('overflow-hidden');
     });
   }
 }

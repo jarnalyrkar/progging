@@ -33,7 +33,9 @@
   width: 0;
   transition: width 200ms ease-in-out;
   z-index: 1;
-
+  & .search {
+    margin-bottom: 1rem;
+  }
   & .nav-main {
     padding: 2rem;
     list-style: none;
@@ -49,6 +51,8 @@
   &--open {
     width: 100vw;
     transition: width 200ms ease-in-out;
+    overflow-y: scroll;
+
     & .nav-main {
       display: block;
     }
