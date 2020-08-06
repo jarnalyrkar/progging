@@ -7,7 +7,7 @@
 .linkList {
   display: flex;
   align-items: center;
-  border: 1px solid #467;
+  border: 1px solid $blue;
   margin-bottom: .5rem;
   border-radius: 4px;
   padding: 1rem;
@@ -24,7 +24,7 @@
 
   &:hover {
     text-decoration: none;
-    background-color: #467;
+    background-color: $blue;
     color: white;
   }
   & > h3 {
