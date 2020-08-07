@@ -34,6 +34,7 @@ class CollectAnchors {
 
   listen() {
     this.tableOfContentsButton.addEventListener('click', () => {
+      this.tableOfContentsButton.classList.toggle('tableOfContents__button--hover');
       if (this.tableOfContents.style.display == "none") {
         this.tableOfContents.style.display = "flex";
         this.setHeight();
