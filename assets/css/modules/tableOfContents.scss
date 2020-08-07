@@ -40,6 +40,15 @@
   }
 }
 
+@media (min-width: 992px) {
+  .tableOfContents__button {
+    bottom: 85px;
+    &:hover {
+      bottom: 83px;
+    }
+  }
+}
+
 @media (min-width: 1200px) {
 .tableOfContents {
   &__list {
