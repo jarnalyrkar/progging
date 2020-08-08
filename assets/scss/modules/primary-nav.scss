@@ -5,11 +5,13 @@
   padding: 0;
   position: relative;
   align-self: baseline;
+  top: 0.5rem;
 
   &--toggled {
     z-index: 1;
+
     & .hamburger__line {
-      border-color: black;
+      border-color: #000;
     }
   }
 
@@ -17,7 +19,8 @@
     display: block;
     border: 1px solid black;
     width: 30px;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
+
     &:nth-child(3) {
       margin-bottom: 0;
     }
@@ -28,45 +31,48 @@
 .headerMenu {
   background-color: #fff;
   position: absolute;
-  top: 0; right: 0;
+  top: 0;
+  right: 0;
   height: 100vh;
   width: 0;
   transition: width 200ms ease-in-out;
   z-index: 1;
-  & .search {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    & > input[type="text"] {
-      margin-right: .5rem;
-    }
-  }
-  & .nav-main {
+
+  &__list {
     padding: 2rem;
     list-style: none;
     margin-bottom: 0;
     display: none;
     font-weight: 700;
-    & ul {
-      list-style: disc;
-      font-weight: 400;
-    }
   }
+
 
   &--open {
     width: 100vw;
     transition: width 200ms ease-in-out;
     overflow-y: scroll;
 
-    & .nav-main {
-      display: block;
+    & .headerMenu__list {
+      display: flex;
+      flex-direction: column;
     }
   }
 
-  & .nav-main-link {
+  &__link {
     color: black;
     font-family: Geneva, sans-serif;
-    user-select: none;
+  }
+  &__submenu {
+    font-weight: 400;
+    list-style: disc;
+  }
+  & .search {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    & input[type="text"] {
+      margin-right: .5rem;
+    }
   }
 }
 
@@ -74,24 +80,27 @@
   .hamburger {
     display: none;
   }
+
   .headerMenu {
     display: block;
     position: static;
-    background-color: transparent;
     height: auto;
     width: auto;
-    & .nav-main {
+
+    &__list {
       padding: 0;
       display: flex;
       flex-direction: column;
-      &-link {
-        color: black;
-      }
     }
+
+    &__link {
+      color: black;
+    }
+
     & .search {
       & input[type="text"] {
         border: 0;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #000;
       }
     }
   }

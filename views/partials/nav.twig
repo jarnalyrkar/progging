@@ -1,23 +1,29 @@
 {# Example markup #}
 <nav class="headerMenu">
-  <ul class="nav-main">
-    <li>
+  <ul class="headerMenu__list">
+    <li class="headerMenu__item searchContainer">
       {% include "partials/searchform.twig" %}
     </li>
     {# mainNav er globalt satt i inc/add_twig_nav.php #}
     {% for item in mainNav.items %}
-    <li class="nav-main-item {{ item.classes|join(' ') }}">
-      <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
-      {% if item.children %}
-        <ul class="nav-drop">
+      <li class="headerMenu__item {{ item.classes|join(' ') }}">
+        <a class="headerMenu__link" href="{{ item.link }}">{{ item.title }}</a>
+        {% if item.children %}
+        <ul class="headerMenu__submenu">
           {% for child in item.children %}
-            <li class="nav-drop-item">
-              <a class="nav-main-link" href="{{ child.link }}">{{ child.title }}</a>
+            <li class="headerMenu__item headerMenu__item--sub ">
+              <a class="headerMenu__link headerMenu__link--sub" href="{{ child.link }}">
+                {{ child.title }}
+              </a>
+              {{ child.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
               {% if child.children %}
-                <ul class="nav-drop">
-                  {% for subchild in child.children %}
-                    <li class="nav-drop-item">
-                      <a class="nav-main-link" href="{{ subchild.link }}">{{ subchild.title }}</a>
+                <ul class="headerMenu__submenu">
+                  {% for grandchild in child.children %}
+                    <li class="headerMenu__item headerMenu__item--sub ">
+                      <a class="headerMenu__link headerMenu__link--sub" href="{{ grandchild.link }}">
+                        {{ grandchild.title }}
+                      </a>
+                      {{ grandchild.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
                     </li>
                   {% endfor %}
                 </ul>
@@ -25,8 +31,8 @@
             </li>
           {% endfor %}
         </ul>
-      {% endif %}
-    </li>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </nav>
