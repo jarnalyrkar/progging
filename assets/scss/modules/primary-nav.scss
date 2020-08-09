@@ -65,6 +65,7 @@
     list-style: disc;
   }
   & .search {
+    margin-top: -7px; // Align with hamburger
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
