@@ -64,14 +64,24 @@
     font-weight: 400;
     list-style: disc;
   }
+
+}
+
+#mobiNav {
   & .search {
     margin-top: -7px; // Align with hamburger
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
+
     & input[type="text"] {
       margin-right: .5rem;
     }
+  }
+}
+#desktopNav {
+  & .search {
+    margin-top: 1rem;
   }
 }
 
@@ -83,8 +93,9 @@
   #desktopMenu {
     display: block;
     margin-left: 1rem;
-    position: sticky;
-    top: 10%;
+    position: fixed;
+    z-index: 99;
+    top: 12%;
   }
 
   .headerMenu {
