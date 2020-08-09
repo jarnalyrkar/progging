@@ -9,28 +9,30 @@
       <li class="headerMenu__item {{ item.classes|join(' ') }}">
         <a class="headerMenu__link" href="{{ item.link }}">{{ item.title }}</a>
         {% if item.children %}
-        <ul class="headerMenu__submenu">
-          {% for child in item.children %}
-            <li class="headerMenu__item headerMenu__item--sub ">
-              <a class="headerMenu__link headerMenu__link--sub" href="{{ child.link }}">
-                {{ child.title }}
-              </a>
-              {{ child.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
-              {% if child.children %}
-                <ul class="headerMenu__submenu">
-                  {% for grandchild in child.children %}
-                    <li class="headerMenu__item headerMenu__item--sub ">
-                      <a class="headerMenu__link headerMenu__link--sub" href="{{ grandchild.link }}">
-                        {{ grandchild.title }}
-                      </a>
-                      {{ grandchild.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+          <ul class="headerMenu__submenu">
+            {% for child in item.children %}
+              <li class="headerMenu__item headerMenu__item--sub ">
+                <a class="headerMenu__link headerMenu__link--sub" href="{{ child.link }}">
+                  {{ child.title }}
+                </a>
+                {% if not child.children %}
+                  {{ child.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
+                {% endif %}
+                {% if child.children %}
+                  <ul class="headerMenu__submenu">
+                    {% for grandchild in child.children %}
+                      <li class="headerMenu__item headerMenu__item--sub ">
+                        <a class="headerMenu__link headerMenu__link--sub" href="{{ grandchild.link }}">
+                          {{ grandchild.title }}
+                        </a>
+                        {{ grandchild.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         {% endif %}
       </li>
     {% endfor %}
