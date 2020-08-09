@@ -81,16 +81,26 @@
     display: none;
   }
 
-  .headerMenu {
+  #desktopMenu {
     display: block;
+    margin-left: 1rem;
+    position: sticky;
+    top: 10%;
+  }
+
+  .headerMenu {
     position: static;
     height: auto;
     width: auto;
 
     &__list {
       padding: 0;
-      display: flex;
+      display: block;
       flex-direction: column;
+      overflow-y: scroll;
+      max-height: 75vh;
+      position: fixed;
+      visibility: hidden;
     }
 
     &__link {
