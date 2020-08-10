@@ -18,3 +18,10 @@ main {
   background-color: #aaa;
   padding: 1rem;
 }
+
+@media (min-width: 992px) {
+  .mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+  }
+}

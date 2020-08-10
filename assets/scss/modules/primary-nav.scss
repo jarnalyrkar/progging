@@ -3,19 +3,22 @@
   background-color: transparent;
   border: 0;
   padding: 0;
-  position: relative;
+  position: absolute;
+  right:0;
+  top: 0;
+  margin: 1.5rem;
 
   &--toggled {
     z-index: 1;
 
     & .hamburger__line {
-      border-color: #000;
+      border-color: white;
     }
   }
 
   &__line {
     display: block;
-    border: 1px solid black;
+    border: 1px solid white;
     width: 30px;
     margin-bottom: 0.25em;
 
@@ -53,16 +56,17 @@
     & .headerMenu__list {
       display: flex;
       flex-direction: column;
+      background-color: $blue;
     }
   }
 
   &__link {
-    color: black;
+    color: white;
     font-family: Geneva, sans-serif;
   }
   &__submenu {
     font-weight: 400;
-    list-style: disc;
+    list-style: none;
   }
 
 }
@@ -79,23 +83,11 @@
     }
   }
 }
-#desktopNav {
-  & .search {
-    margin-top: 1rem;
-  }
-}
+
 
 @media (min-width:992px) {
   .hamburger {
     display: none;
-  }
-
-  #desktopMenu {
-    display: block;
-    margin-left: 1rem;
-    position: fixed;
-    z-index: 99;
-    top: 8%;
   }
 
   .headerMenu {
@@ -107,10 +99,6 @@
       padding: 0;
       display: block;
       flex-direction: column;
-      overflow-y: scroll;
-      max-height: 75vh;
-      position: fixed;
-      visibility: hidden;
     }
 
     &__link {
@@ -124,4 +112,49 @@
       }
     }
   }
+
+  #desktopMenu {
+    display: block;
+    z-index: 99;
+  }
+
+  #desktopNav {
+    & .headerMenu {
+      &__link {
+        color: white;
+        &:hover {
+          font-weight: 700;
+        }
+      }
+      &__submenu {
+        list-style: none;
+      }
+      &__list {
+        overflow-y: scroll;
+        position: fixed;
+        transform: translate(-200%);
+        max-height: calc(100vh - 120px); //  64px header + 56px footer
+        border-top: 4px solid lightblue;
+        border-bottom: 4px solid lightblue;
+        background-color: $blue;
+        transition: transform 300ms;
+        padding: 1rem;
+        z-index: 9;
+        &--open {
+          transform: translateX(0);
+          transition: transform 300ms;
+        }
+      }
+      & .search {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        & input[type="image"] {
+          margin-left: .5rem;
+          margin-top: -4px;
+        }
+      }
+    }
+  }
+
 }

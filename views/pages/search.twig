@@ -1,12 +1,12 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-<div class="container-fluid">
+<main class="container-fluid">
   <div class="row">
     <aside class="sidebar col-lg-4 col-xl-3 d-none d-lg-block">
       {% include 'partials/nav.twig' %}
     </aside>
-    <section class="searchResults col-12 col-lg-7 col-xl-5 offset-lg-1">
+    <section class="searchResults col-12 col-lg-7 col-xl-5 offset-lg-1 mt-5">
       <h1>{{ posts.found_posts }} innlegg funnet med &ldquo;{{ search_query }}&rdquo;</h1>
       {% for post in posts %}
       <article class="searchResults__item">
@@ -28,5 +28,5 @@
       </ol>
     </section>
   </div>
-</div>
+</main>
 {% endblock %}

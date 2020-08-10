@@ -3,18 +3,18 @@
 {% block content %}
 
 <main class="container-fluid">
-  <div class="row">
+  <div class="row mainGrid">
     <button id="desktopMenu" class="hamburger d-none d-lg-block">
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
       <span class="visually-hidden">Menu</span>
     </button>
-    <aside id="desktopNav" class="sidebar col-lg-4 col-xl-3 d-none d-lg-block">
+    <aside id="desktopNav" class="sidebar">
       {% include 'partials/nav.twig' %}
     </aside>
 
-    <div class="col-12 col-lg-7 col-xl-5 offset-lg-5 offset-xl-1">
+    <div class="col-12 mt-5">
       {% if not fn('is_front_page') %}
         <h1>{{ post.title }}</h1>
       {% endif %}

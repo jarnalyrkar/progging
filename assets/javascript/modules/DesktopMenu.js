@@ -7,11 +7,7 @@ class DesktopMenu {
 
   events() {
     this.menuButton.addEventListener('click', () => {
-      if (this.menu.style.visibility == "hidden" || !this.menu.getAttribute('style')) {
-        this.menu.style.visibility = "visible";
-      } else {
-        this.menu.style.visibility = "hidden";
-      }
+      this.menu.classList.toggle('headerMenu__list--open');
     });
   }
 }
