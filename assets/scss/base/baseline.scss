@@ -19,8 +19,18 @@ main {
 }
 
 .faktaboks {
-  background-color: #aaa;
+  border: 1px solid rgb(95, 194, 255);
   padding: 1rem;
+  color: rgb(95, 194, 255);
+  border-radius: 10px;
+  font-style: italic;
+  position: relative;
+  right: 2rem;
+}
+
+h2, h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 @media (min-width: 992px) {
