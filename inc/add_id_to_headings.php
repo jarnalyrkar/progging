@@ -10,6 +10,6 @@ function origin_add_id_to_heading_block( $block_content, $block ) {
 function origin_add_id_to_heading($match) {
 	list(, $heading, $title) = $match;
 	$id = sanitize_title_with_dashes($title);
-	$anchor = '<a href="#'.$id.'" class="headingAnchor">' . $title . '</a>';
-	return "<$heading id='$id'>$title</$heading> $anchor";
+	$anchor = '<a href="#'.$id.'" class="headingAnchor hidden">' . $title . '</a>';
+	return "$anchor <$heading id='$id'>$title</$heading>";
 }

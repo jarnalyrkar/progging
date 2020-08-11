@@ -2,6 +2,10 @@
   display: none;
 }
 
+html {
+  scroll-padding-top: 64px; // Height of header
+}
+
 .overflow-hidden {
   overflow-y: hidden;
 }
