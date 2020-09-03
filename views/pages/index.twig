@@ -13,15 +13,18 @@
     <aside id="desktopNav" class="sidebar">
       {% include 'partials/nav.twig' %}
     </aside>
-
-    <div class="col-12 mt-5">
-      {% if not fn('is_front_page') %}
-        <h1>{{ post.title }}</h1>
-      {% endif %}
-      {{ post.content }}
-      {% if not fn('is_front_page') %}
-        {% include 'partials/childCards.twig' %}
-      {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-5 content">
+          {% if not fn('is_front_page') %}
+            <h1>{{ post.title }}</h1>
+          {% endif %}
+          {{ post.content }}
+          {% if not fn('is_front_page') %}
+            {% include 'partials/childCards.twig' %}
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </main>
