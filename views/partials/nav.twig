@@ -15,21 +15,17 @@
                 <a class="headerMenu__link headerMenu__link--sub" href="{{ child.link }}">
                   {{ child.title }}
                 </a>
-                {% if not child.children %}
-                  {{ child.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
-                {% endif %}
-                {% if child.children %}
+                {# if child.children %}
                   <ul class="headerMenu__submenu">
                     {% for grandchild in child.children %}
                       <li class="headerMenu__item headerMenu__item--sub ">
                         <a class="headerMenu__link headerMenu__link--sub" href="{{ grandchild.link }}">
                           {{ grandchild.title }}
                         </a>
-                        {{ grandchild.master_object.ferdigstilt ? '&#9989;' : '&#10060;' }}
                       </li>
                     {% endfor %}
                   </ul>
-                {% endif %}
+                {% endif #}
               </li>
             {% endfor %}
           </ul>

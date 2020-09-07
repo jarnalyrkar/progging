@@ -14,15 +14,25 @@
       {% include 'partials/nav.twig' %}
     </aside>
     <div class="container">
+      {% if not fn('is_front_page') %}
+        <div class="row">
+          <nav class="col-12 col-md-10">
+            {{ fn('breadcrumb') }}
+          </nav>
+        </div>
+      {% endif %}
       <div class="row">
-        <div class="col-12 mt-5 content">
-          {% if not fn('is_front_page') %}
-            <h1>{{ post.title }}</h1>
-          {% endif %}
+        <div class="col-12 col-md-10 mt-5 content">
+          <h1>{{ post.title }}</h1>
           {{ post.content }}
-          {% if not fn('is_front_page') %}
-            {% include 'partials/childCards.twig' %}
+          {% if post.parent.title == "Leksjoner" %}
+            {% include 'partials/children.twig' %}
+          {% elseif post.title == "Leksjoner" %}
+            {% include 'partials/courses.twig' %}
+          {% else %}
+            {% include 'partials/pagination.twig' %}
           {% endif %}
+
         </div>
       </div>
     </div>

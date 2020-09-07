@@ -6,6 +6,33 @@ html {
   scroll-padding-top: 64px; // Height of header
 }
 
+body {
+  font-size: 20px;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.lead {
+  font-size: 30px;
+}
+
+ul {
+  list-style: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  margin-left: -.9em;
+  margin-top: .7em;
+  width: .3em;
+  height: .3em;
+  border-radius: .2em;
+  background: #999;
+}
+
 .overflow-hidden {
   overflow-y: hidden;
 }
@@ -30,16 +57,7 @@ main {
   margin-bottom: 3rem;
 }
 
-h2, h3 {
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-
 @media (min-width: 992px) {
-  .mainGrid {
-    display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
-  }
   .faktaboks {
     position: relative;
     right: 2rem;

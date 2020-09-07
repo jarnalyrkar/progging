@@ -13,10 +13,10 @@ function breadcrumb() {
 
   if (is_home() || is_front_page()) {
     if ($showOnHome == 1) {
-      $output .= '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+      $output .= '<div id="crumbs" class="breadcrumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
     }
   } else {
-      $output .= '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+      $output .= '<div id="crumbs" class="breadcrumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
       if (is_category()) {
           $thisCat = get_category(get_query_var('cat'), false);
           if ($thisCat->parent != 0) {

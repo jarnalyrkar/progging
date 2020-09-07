@@ -1,0 +1,10 @@
+{% if prevPage or nextPage %}
+<nav class="pagination">
+  {% if prevPage %}
+    <span>Forrige side: <a href="{{ prevPage.link }}">{{ prevPage.title }}</a></span>
+  {% endif %}
+  {% if nextPage %}
+    <span>Neste side: <a href="{{ nextPage.link }}">{{ nextPage.title }}</a></span>
+  {% endif %}
+</nav>
+{% endif %}
