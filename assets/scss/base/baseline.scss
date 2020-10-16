@@ -7,12 +7,12 @@ html {
 }
 
 body {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Libre Franklin', sans-serif;
 }
 
 .lead {
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 ul {
@@ -20,22 +20,24 @@ ul {
   border: 0;
   padding: 0;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 li::before {
   content: "";
   position: absolute;
-  margin-left: -.9em;
-  margin-top: .7em;
-  width: .3em;
-  height: .3em;
-  border-radius: .2em;
+  margin-top: .7rem;
+  margin-left: -.65rem;
+  width: .3rem;
+  height: .3rem;
+  border-radius: .2rem;
   background: #999;
 }
 
 .overflow-hidden {
   overflow-y: hidden;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -58,8 +60,14 @@ main {
 }
 
 @media (min-width: 992px) {
+  body {
+    font-size: 20px;
+  }
   .faktaboks {
     position: relative;
     right: 2rem;
+  }
+  li::before {
+    margin-left: -.9rem;
   }
 }
