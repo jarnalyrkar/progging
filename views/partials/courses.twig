@@ -1,3 +1,18 @@
-{% for page in Post(pages) %}
-  <a href="{{ page.link }}">{{ page.title }}</a>
-{% endfor %}
+{% if post.children %}
+  {% for child in post.children %}
+    {% if child.post_type == 'page' %}
+      <h2><a href="{{ child.link }}">{{ child.title }}</a></h2>
+      {% if child.children %}
+        <ul>
+          {% for subchild in child.children %}
+            {% if subchild.post_type == 'page' %}
+              <li>
+                <h3><a href="{{ subchild.link }}">{{ subchild.title }}</a></h3>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

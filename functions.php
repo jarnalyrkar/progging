@@ -18,8 +18,6 @@ require_once($base_dir . '/inc/add_theme_assets.php');
 require_once($base_dir . '/inc/add_twig_nav.php');
 // Add breadcrumb
 require_once($base_dir . '/inc/add_breadcrumb.php');
-// Add woocommerce-support
-// require_once($base_dir . '/inc/add_woocommerce_support.php');
 require_once($base_dir . '/inc/wordpress_options.php');
 // Add id's to gutenberg headings (for anchor usage)
 require_once($base_dir . '/inc/add_id_to_headings.php');
