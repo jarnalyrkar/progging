@@ -21,3 +21,5 @@ require_once($base_dir . '/inc/add_breadcrumb.php');
 require_once($base_dir . '/inc/wordpress_options.php');
 // Add id's to gutenberg headings (for anchor usage)
 require_once($base_dir . '/inc/add_id_to_headings.php');
+
+remove_filter('the_title', 'wptexturize'); // Remove special quotes
