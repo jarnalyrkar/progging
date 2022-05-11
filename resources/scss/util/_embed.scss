@@ -1,0 +1,14 @@
+/* Responsive 16:9 video embeds */
+.embedContainer {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+.embedContainer iframe, .embedContainer video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}

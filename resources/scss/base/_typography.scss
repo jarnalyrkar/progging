@@ -1,0 +1,7 @@
+@use '../base/breakpoints' as *;
+
+html {
+  font-family: sans-serif;
+  line-height: 1.2;
+  color: var(--color-text);
+}

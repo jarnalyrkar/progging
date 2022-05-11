@@ -1,0 +1,5 @@
+@function columns($size) {
+  $column: calc(100% / 12);
+  $result: calc(#{$size} * #{$column});
+  @return $result;
+}

@@ -1,0 +1,33 @@
+/* Default style for html-tags often used in wysiwyg-fields */
+a {
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+ul {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-top: .5rem;
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 2rem;
+  margin-top: .5rem;
+}
+
+br {
+  display: block;
+}
+
+u {
+  text-decoration: underline;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+i, em {
+  font-style: italic;
+}
