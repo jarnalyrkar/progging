@@ -1,1 +1,0 @@
-(()=>{"use strict";(()=>{const t=class{constructor(){this.button=document.querySelector("#menu_button"),this.button&&this.button.addEventListener("click",this.openMenu)}openMenu(){console.log("Consider me open")}};document.addEventListener("DOMContentLoaded",(()=>{new t}))})()})();

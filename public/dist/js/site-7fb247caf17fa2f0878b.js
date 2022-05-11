@@ -1,0 +1,2 @@
+(()=>{"use strict";(()=>{const t=class{constructor(){this.button=document.querySelector("#menu_button"),this.button&&this.button.addEventListener("click",this.openMenu)}openMenu(){console.log("Consider me open")}};document.addEventListener("DOMContentLoaded",(()=>{new t}))})()})();
+//# sourceMappingURL=site-7fb247caf17fa2f0878b.js.map

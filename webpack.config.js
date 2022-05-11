@@ -40,7 +40,8 @@ module.exports = {
   entry: ['./resources/javascript/site.js', './resources/scss/site.scss'],
   output: {
     filename: 'js/site-[contenthash].js',
-    path: path.resolve('public/dist/')
+    path: path.resolve('public/dist/'),
+    clean: true
   },
   module: {
     rules: [{
@@ -51,20 +52,25 @@ module.exports = {
           loader: 'css-loader',
           options: {
             url: false,
+            sourceMap: true
           }
         },
         {
           loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
         }
       ],
     },
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: "babel-loader"
+      use: ["babel-loader", "source-map-loader"]
     }
     ]
   },
+  devtool: 'source-map',
   mode: "production",
   watch: true,
 };
